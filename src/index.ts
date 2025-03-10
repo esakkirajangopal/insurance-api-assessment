@@ -5,9 +5,11 @@ import cors from "cors"
 
 const app = express()
 
+app.use(cors())
+
+
 app.use("/api", policy_router)
 
-app.use(cors())
 
 app.use("/", (req, res) => {
     res.status(404).json({

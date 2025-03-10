@@ -13,7 +13,7 @@ export const get_policies_data = (req : Request, res:Response) => {
 
         let result : Policy[] = get_policies()
 
-        const search_text = req.query.search?.toString() ?? ""
+        const search_text = req.query.search_text?.toString() ?? ""
         const min_premium = req.query.min_premium ?? 0
         const max_premium = req.query.max_premium ?? 0
         const policy_type = req.query.policy_type?.toString() ?? ""
