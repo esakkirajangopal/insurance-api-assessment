@@ -1,9 +1,13 @@
 import express from "express"
 import { policy_router } from "./routes/policy-route"
 
+import cors from "cors"
+
 const app = express()
 
 app.use("/api", policy_router)
+
+app.use(cors())
 
 app.use("/", (req, res) => {
     res.status(404).json({
