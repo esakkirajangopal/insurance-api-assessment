@@ -32,7 +32,7 @@ export const get_policies_data = (req : Request, res:Response) => {
 
         if(min_premium) result = result.filter((_policy:Policy) =>  _policy.premium >= Number(min_premium))
 
-        if(max_premium) result = result.filter((_policy:Policy) =>  _policy.premium >= Number(max_premium))
+        if(max_premium) result = result.filter((_policy:Policy) =>  _policy.premium <= Number(max_premium))
 
 
         if(sort_order.toLowerCase() == "asc"){
